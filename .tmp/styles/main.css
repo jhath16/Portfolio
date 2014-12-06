@@ -1,18 +1,86 @@
+@font-face {
+  font-family: 'Mono Social Icons Font';
+  src: url("MonoSocialIconsFont-1.10.eot");
+  src: url("MonoSocialIconsFont-1.10.eot?#iefix") format("embedded-opentype"), url("MonoSocialIconsFont-1.10.woff") format("woff"), url("MonoSocialIconsFont-1.10.ttf") format("truetype"), url("MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont") format("svg");
+  src: url("MonoSocialIconsFont-1.10.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.symbol, a.symbol:before {
+  font-family: 'Mono Social Icons Font';
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  -ms-text-rendering: optimizeLegibility;
+  -o-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+a.symbol:before {
+  content: attr(title);
+  margin-right: 0.3em;
+  font-size: 130%;
+}
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
 }
 
-html, body {
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+html, body, ul {
   margin: 0;
   padding: 0;
 }
 
 .container {
   margin: 0 auto;
-  background: #013175;
   width: 100%;
-  height: 500px;
+}
+
+header {
+  box-sizing: border-box;
+  background: linear-gradient(#1e1a1e, #0F0D0F);
+  height: 70px;
+  padding: 20px 30px;
+}
+header a {
+  color: #D87A43;
+  text-shadow: none;
+  text-decoration: none;
+  font-size: 1.8em;
+  background: transparent;
+  padding: .2em .5em;
+  border-radius: 3px;
+  transition: all .25s ease;
+}
+header a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  text-shadow: 0 0 3px #dc8756;
+}
+header ul {
+  float: right;
+}
+header ul:after {
+  content: '';
+  display: table;
+  visibility: hidden;
+  clear: both;
+}
+header li {
+  margin-left: .5em;
+  display: inline;
+}
+
+.displacement {
+  width: 100%;
 }
 
 @-webkit-keyframes fade-in {
@@ -23,7 +91,6 @@ html, body {
   }
   15% {
     opacity: 0;
-    text-shadow: none;
   }
   50% {
     -webkit-transform: translateY(0);
@@ -31,10 +98,10 @@ html, body {
     text-shadow: none;
   }
   75% {
-    text-shadow: 0 0 50px white;
+    text-shadow: 0 0 30px white;
   }
   100% {
-    text-shadow: 0 0 20px white;
+    text-shadow: 0 0 15px white;
   }
 }
 @keyframes fade-in {
@@ -45,7 +112,6 @@ html, body {
   }
   15% {
     opacity: 0;
-    text-shadow: none;
   }
   50% {
     -webkit-transform: translateY(0);
@@ -53,27 +119,12 @@ html, body {
     text-shadow: none;
   }
   75% {
-    text-shadow: 0 0 50px white;
+    text-shadow: 0 0 30px white;
   }
   100% {
-    text-shadow: 0 0 20px white;
+    text-shadow: 0 0 15px white;
   }
 }
-h1 {
-  -webkit-animation: fade-in 3.5s ease;
-  animation: fade-in 3.5s ease;
-  margin: 0;
-  text-shadow: 0 0 20px white;
-  font-size: 84px;
-  color: white;
-  font-weight: 100;
-  text-align: center;
-  font-family: sans-serif;
-  padding-top: 100px;
-  opacity: 1;
-  transition: all 1s ease;
-}
-
 @-webkit-keyframes background-pan {
   from {
     -webkit-transform: translatey(-25%);
@@ -94,6 +145,27 @@ h1 {
     transform: translatey(0);
   }
 }
+.text-animation {
+  -webkit-animation: fade-in 2.5s ease;
+  animation: fade-in 2.5s ease;
+}
+
+.background-animation {
+  animation: background-pan 2.25s ease;
+  -webkit-animation: background-pan 2.25s ease;
+}
+
+h1 {
+  text-shadow: 0 0 15px white;
+  font-size: 84px;
+  color: white;
+  font-weight: 100;
+  text-align: center;
+  font-family: sans-serif;
+  padding-top: 100px;
+  opacity: 1;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -102,14 +174,54 @@ html, body {
 .background {
   height: 150%;
   width: 100%;
-  animation: background-pan 3s ease;
-  -webkit-animation: background-pan 3s ease;
-  background-image: url("http://images3.alphacoders.com/424/42485.jpg");
+  background-image: url("../images/portfolio-header.jpg");
   background-size: cover;
+}
+
+.middle-align {
+  width: 960px;
+  margin: 0 auto;
 }
 
 .header {
   overflow: hidden;
   width: 100%;
-  height: 550px;
+  height: 500px;
+}
+
+.about {
+  color: white;
+  height: 330px;
+  width: 100%;
+  background: #1C2640;
+  text-align: center;
+  font-size: 1.4em;
+}
+
+h2 {
+  padding-top: 20px;
+  font-size: 48px;
+  text-align: center;
+}
+
+.contact {
+  background: #D87A43;
+}
+
+.contact ul {
+  text-align: center;
+  width: 100%;
+  color: black;
+  font-size: 2em;
+  height: 300px;
+  /*This is only temporary*/
+}
+.contact ul li {
+  max-height: 50px;
+  max-width: 50px;
+  padding: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  background: white;
 }
