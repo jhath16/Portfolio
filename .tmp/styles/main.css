@@ -29,6 +29,9 @@ a.symbol:before {
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
+  font-size: 28px;
+  box-sizing: border-box;
+  font-rendering: optimizeLegibility;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -40,30 +43,48 @@ html, body, ul {
   padding: 0;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .container {
   margin: 0 auto;
   width: 100%;
 }
 
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
 header {
   box-sizing: border-box;
-  background: linear-gradient(#1e1a1e, #0F0D0F);
-  height: 70px;
-  padding: 20px 30px;
+  background: linear-gradient(#2a2a2a, #0F0D0F 90%);
+  padding: .6em 2em .4em 2em;
 }
 header a {
   color: #D87A43;
   text-shadow: none;
   text-decoration: none;
-  font-size: 1.8em;
+  font-size: 1.1em;
   background: transparent;
   padding: .2em .5em;
-  border-radius: 3px;
-  transition: all .25s ease;
+  border-radius: 5px;
+  box-shadow: none;
+  transition: text-shadow .25s ease,background .25s ease,box-shadow .05s ease;
 }
 header a:hover {
-  background: rgba(255, 255, 255, 0.06);
-  text-shadow: 0 0 3px #dc8756;
+  background: rgba(255, 255, 255, 0.1);
+  text-shadow: 0 0 8px #dc8756;
+}
+header a:active {
+  /*background:rgba(255,255,255,.055);*/
+  box-shadow: inset 0 -1px 5px #0F0D0F;
 }
 header ul {
   float: right;
@@ -77,10 +98,6 @@ header ul:after {
 header li {
   margin-left: .5em;
   display: inline;
-}
-
-.displacement {
-  width: 100%;
 }
 
 @-webkit-keyframes fade-in {
@@ -157,7 +174,7 @@ header li {
 
 h1 {
   text-shadow: 0 0 15px white;
-  font-size: 84px;
+  font-size: 3em;
   color: white;
   font-weight: 100;
   text-align: center;
@@ -179,7 +196,7 @@ html, body {
 }
 
 .middle-align {
-  width: 960px;
+  max-width: 920px;
   margin: 0 auto;
 }
 
@@ -191,21 +208,124 @@ html, body {
 
 .about {
   color: white;
-  height: 330px;
   width: 100%;
-  background: #1C2640;
+  background: #243152;
   text-align: center;
-  font-size: 1.4em;
+  padding: 1em 0;
+}
+.about p {
+  font-size: .8em;
+  line-height: 1.5em;
+  font-weight: 200;
+}
+.about a {
+  text-decoration: none;
+  border-bottom: 1px dotted white;
+}
+.about a:hover {
+  text-shadow: 0 0 2px white;
 }
 
 h2 {
   padding-top: 20px;
-  font-size: 48px;
+  font-size: 1.7em;
   text-align: center;
 }
 
+/* ====================================================== */
+/*                  Project Templates                     */
+/* ====================================================== */
+h3 {
+  margin-bottom: 10px;
+  font-size: 1.3em;
+}
+
+.project {
+  height: 250px;
+  border-radius: 2px;
+  margin-bottom: 50px;
+}
+
+.left {
+  float: left;
+  width: 40%;
+  height: 100%;
+}
+
+.github-preview {
+  background: url("../images/github-preview.png") no-repeat;
+}
+
+.backbone-preview {
+  background: url("../images/backbone-menu.png") no-repeat;
+}
+
+.project-preview {
+  height: 75%;
+  background-size: 100% 100%;
+  background-position: 0 0 center;
+  border: 1px solid black;
+  transition: all .4s ease;
+}
+.project-preview:hover {
+  -webkit-transform: translateY(-3px);
+  transform: translateY(-3px);
+  box-shadow: 0 2px 8px #555;
+}
+
+.project-links {
+  text-align: center;
+  height: 20%;
+}
+.project-links .button {
+  font-size: .7em;
+  font-weight: 200;
+  letter-spacing: .5px;
+  margin: .6em 20px 0 20px;
+  display: inline-block;
+  color: white;
+  border-radius: 4px;
+  padding: 5px 9px;
+  background: #243152;
+  transition: all .03s ease;
+}
+.project-links .button:hover {
+  background: #465fa0;
+}
+.project-links .button:active {
+  box-shadow: inset 0 1px 5px #000;
+}
+
+.right {
+  float: right;
+  width: 58%;
+  height: 100%;
+}
+.right p {
+  font-size: .7em;
+  margin: 0;
+}
+.right ul {
+  list-style: circle;
+}
+.right ul li {
+  margin-left: 20px;
+  font-size: .7em;
+}
+
+h5 {
+  margin-top: .5em;
+}
+
+/* ====================================================== */
+/*                  Project Templates                     */
+/* ====================================================== */
 .contact {
   background: #D87A43;
+  padding-bottom: 2em;
+}
+.contact h2 {
+  margin-bottom: 40px;
 }
 
 .contact ul {
@@ -213,15 +333,84 @@ h2 {
   width: 100%;
   color: black;
   font-size: 2em;
-  height: 300px;
-  /*This is only temporary*/
 }
 .contact ul li {
-  max-height: 50px;
-  max-width: 50px;
-  padding: 15px;
+  margin-bottom: 20px;
+  height: 1.5em;
+  width: 1.5em;
   border-radius: 50%;
   display: inline-block;
   text-align: center;
-  background: white;
+  margin: 0 .5em;
+  background: #ddd;
+}
+.contact ul a {
+  color: black;
+}
+.contact ul i {
+  position: relative;
+  top: .15em;
+  display: inline-block;
+}
+
+.twitter:hover {
+  background: #2FC2EF;
+  color: white;
+  box-shadow: 0 0 8px #2FC2EF;
+}
+
+.github:hover {
+  background: #fff;
+  box-shadow: 0 0 8px #fff;
+}
+
+.linkedin:hover {
+  background: #0A7AB6;
+  color: white;
+  box-shadow: 0 0 8px #0A7AB6;
+}
+
+.email:hover {
+  background: #F7CD5F;
+  color: white;
+  box-shadow: 0 0 8px #F7CD5F;
+}
+
+/*   Media Queries   */
+@media (max-width: 1000px) {
+  body {
+    font-size: 22px;
+  }
+
+  .header {
+    height: 300px;
+  }
+
+  header {
+    padding: .4em 1em .3em 1em;
+    text-align: center;
+    font-size: 1.2em;
+  }
+  header ul {
+    float: none;
+  }
+
+  h1 {
+    padding-top: 1em;
+    font-size: 2.6em;
+  }
+}
+@media (max-width: 600px) {
+  header {
+    display: none;
+  }
+
+  h1 {
+    padding-top: 1.2em;
+    font-size: 2.2em;
+  }
+
+  .about p {
+    padding: 0 1em;
+  }
 }

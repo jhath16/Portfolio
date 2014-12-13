@@ -1,8 +1,14 @@
 $darkBlue: #101624;
-$lighterBlue: #1C2640;
+$lighterBlue: #243152;
 $grey: #5D6272;
 $orange: #D87A43;
+$lightOrange: #dc8756;
 $black: #0F0D0F;
+$twitterBlue: #2FC2EF;
+$linkedinBlue: #0A7AB6;
+$mailColor: #F7CD5F;
+$buttonColor: #1681E8;
+$buttonHoverColor: #465fa0;
 
 @font-face {
     font-family: 'Mono Social Icons Font';
@@ -36,11 +42,12 @@ a.symbol:before {
     font-size: 130%;
 }
 
-
-
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
+    font-size:28px;
+    box-sizing:border-box;
+    font-rendering:optimizeLegibility;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -52,30 +59,49 @@ html, body, ul {
     padding:0;
 }
 
+a {
+    color:inherit;
+    text-decoration:none;
+}
+
 .container {
     margin:0 auto;
     width:100%;
 }
 
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+    }
+
 header {
     box-sizing:border-box;
-    background:linear-gradient(#1e1a1e,$black);
-    height:70px;
-    padding:20px 30px;
+    background:linear-gradient(#2a2a2a,$black 90%);
+    padding:.6em 2em .4em 2em;
 
     a {
         color:$orange;
         text-shadow:none;
         text-decoration: none;
-        font-size:1.8em;
+        font-size:1.1em;
         background:rgba(0,0,0,0);
         padding:.2em .5em;
-        border-radius:3px;
-        transition:all .25s ease;
+        border-radius:5px;
+        box-shadow:none;
+        transition:text-shadow .25s ease,background .25s ease,box-shadow .05s ease;
 
         &:hover {
-            background:rgba(255,255,255,.06);
-            text-shadow:0 0 3px #dc8756;
+            background:rgba(255,255,255,.1);
+            text-shadow:0 0 8px $lightOrange;
+        }
+
+        &:active {
+            /*background:rgba(255,255,255,.055);*/
+            box-shadow:inset 0 -1px 5px $black;
         }
     }
 
@@ -94,10 +120,6 @@ header {
         margin-left: .5em;
         display:inline;
     }
-}
-
-.displacement {
-    width:100%;
 }
 
 @-webkit-keyframes fade-in {
@@ -254,7 +276,7 @@ header {
 
 h1 {
   text-shadow:0 0 15px white; 
-  font-size:84px;
+  font-size:3em;
   color:white;
   font-weight:100;
   text-align:center;
@@ -276,7 +298,7 @@ h1 {
 }
 
 .middle-align {
-    width:960px;
+    max-width:920px;
     margin:0 auto;
 }
 
@@ -288,21 +310,142 @@ h1 {
 
 .about {
     color:white;
-    height:330px;
     width:100%;
     background:$lighterBlue;
     text-align:center;
-    font-size:1.4em;
+    padding:1em 0;
+
+    p {
+        font-size:.8em;
+        line-height: 1.5em;
+        font-weight: 200;
+    }
+
+    a {
+        text-decoration:none;
+        border-bottom:1px dotted white;
+
+        &:hover {
+            text-shadow:0 0 2px white;
+        }
+    }
 }
 
 h2 {
     padding-top:20px;
-    font-size:48px;
+    font-size:1.7em;
     text-align:center;
 }
 
+/* ====================================================== */
+/*                  Project Templates                     */
+/* ====================================================== */
+
+h3 {
+    margin-bottom:10px;
+    font-size:1.3em;
+}
+
+.project {
+    height:250px;
+    border-radius:2px;
+    margin-bottom:50px;
+
+}
+
+.left {
+    float:left;
+    width:40%;
+    height:100%;
+}
+
+.github-preview {
+    background:url('../images/github-preview.png') no-repeat;
+}
+
+.backbone-preview {
+    background:url('../images/backbone-menu.png') no-repeat;
+}
+
+.surf-preview {
+
+}
+
+.project-preview {
+    height:75%;
+    background-size:100% 100%;
+    background-position:0 0 center;
+    border:1px solid black;
+    transition:all .4s ease;
+
+    &:hover {
+        transform:translateY(-3px);
+        box-shadow:0 2px 8px #555;
+    }
+}
+
+.project-links {
+    text-align:center;
+    height:20%;
+
+    .button {
+        font-size:.7em;
+        font-weight:200;
+        letter-spacing:.5px;
+        margin:.6em 20px 0 20px;
+        display:inline-block;
+        color:white;
+        border-radius:4px;
+        padding:5px 9px;
+        background:$lighterBlue;
+        transition:all .03s ease;
+
+        &:hover {
+            background:$buttonHoverColor;
+        }
+
+        &:active {
+            box-shadow:inset 0 1px 5px #000;
+        }
+    }
+}
+
+.right {
+    float:right;
+    width:58%;
+    height:100%;
+
+    p {
+        font-size:.7em;
+        margin:0;
+    }
+
+    ul  {
+        list-style:circle;
+        li {
+            margin-left:20px;
+            font-size:.7em;
+            }
+    }
+}
+
+h5 {
+    margin-top:.5em;
+}
+
+
+
+/* ====================================================== */
+/*                  Project Templates                     */
+/* ====================================================== */
+
 .contact {
     background:$orange;
+    padding-bottom:2em;
+
+    h2 {
+        margin-bottom:40px;
+    }
 }
 
 .contact ul {
@@ -310,16 +453,91 @@ h2 {
     width:100%;
     color:black;
     font-size:2em;
-    height:300px; /*This is only temporary*/
+    
 
     li {
-        max-height:50px;
-        max-width:50px;  
-        padding:15px;
+        margin-bottom:20px;
+        height:1.5em;
+        width:1.5em;  
         border-radius:50%;
         display:inline-block;
         text-align:center;
-        background:white;
+        margin:0 .5em;
+        background:#ddd;
+    }
+
+    a {
+        color:black;
+    }
+
+    i {
+        position:relative;
+        top:.15em;
+        display:inline-block;
     }
 }
 
+.twitter:hover {
+    background:$twitterBlue;
+    color:white;
+    box-shadow:0 0 8px $twitterBlue;
+}
+
+.github:hover {
+    background:#fff;
+    box-shadow:0 0 8px #fff;
+}
+
+.linkedin:hover {
+    background:$linkedinBlue;
+    color:white;
+    box-shadow:0 0 8px $linkedinBlue;
+}
+
+.email:hover {
+    background:$mailColor;
+    color:white;
+    box-shadow:0 0 8px $mailColor;
+}
+
+/*   Media Queries   */
+
+@media (max-width:1000px) {
+    body {
+        font-size:22px;
+    }
+
+    .header {
+        height:300px;
+    }
+
+    header {
+        padding:.4em 1em .3em 1em;
+        text-align:center;
+        font-size:1.2em;
+
+        ul {
+            float:none;
+        }
+    }
+
+    h1 {
+        padding-top:1em;
+        font-size:2.6em;
+    }
+}
+
+@media (max-width:600px) {
+    header {
+        display:none;
+    }
+
+    h1 {
+        padding-top:1.2em;
+        font-size:2.2em;
+    }
+
+    .about p{
+        padding:0 1em;
+    }
+}
