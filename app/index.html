@@ -27,10 +27,10 @@
             <header>
                 <nav class='clearfix'>
                     <ul>
-                        <li><a href=''>About</a></li>
-                        <li><a href=''>Skills</a></li>
-                        <li><a href=''>Work</a></li>
-                        <li><a href=''>Contact</a></li>
+                        <li id='about'>About</li>
+                        <li id='skills'>Skills</li>
+                        <li id='showcase'>Showcase</li>
+                        <li id='contact'>Contact</li>
                     </ul>
                 </nav>
             </header>
@@ -42,8 +42,59 @@
             <div class='about'>
                 <h2>About Me</h2>
                     <div class="middle-align">
-                        <p>I am a front end developer recently graduated from <a href='//theironyard.com' target='_blank'>The Iron Yard academy</a>. I am twenty years old and currently living in Greenville, South Carolina. I am always open to a challenge, especially one that can help to teach me something new. If you want to know more about me, feel free to <a href=''>contact me</a> about anything.</p>
+                        <p>I am a front end developer recently graduated from <a href='//theironyard.com' target='_blank'>The Iron Yard academy</a>. I am twenty years old and currently living in Greenville, South Carolina. I am always open to a challenge, especially one that can help to teach me something new. If you want to know more about me, feel free to <a href='' id='contact-button'>contact me</a> about anything.</p>
                     </div>
+            </div>
+            <div class="skills">
+                <h2>Skills</h2>
+                <div class="middle-align">
+                    <table align='center' cellspacing='0'>
+                        <tr>
+                            <td>
+                                <img src="http://www.w3.org/html/logo/downloads/HTML5_Badge_512.png">
+                                <h6>HTML5</h6>
+                            </td>
+                            <td>
+                                <img src="http://4.bp.blogspot.com/-_jtoi-CBS3E/UDg91M4DgLI/AAAAAAAAC1Q/prAGfj6OSG4/s1600/css3-search-box.png">
+                                <h6>CSS3</h6>
+                            </td>
+                            <td>
+                                <img src="http://i.stack.imgur.com/Mmww2.png">
+                                <h6>JavaScript</h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="http://i.imgur.com/Ud6OR.png">
+                                <h6>BackboneJs</h6>
+                            </td>
+                            <td>
+                                <img src="http://brandonquintanaconsulting.com/img/services/underscore.png">
+                                <h6>UnderscoreJs</h6>
+                            </td>
+                            <td>
+                                <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Ember.js_Logo_and_Mascot.png">
+                                <h6>EmberJs</h6>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="http://www.iconpng.com/png/mixed_icons1/jquery_3d.png">
+                                <h6>jQuery</h6>
+                            </td>
+                            
+                            <td>
+                                <img src="http://icons.iconarchive.com/icons/graphics-vibe/developer/256/ajax-icon.png">
+                                <h6>Asynchrony</h6>
+                            </td>
+                            <td>
+                                <img src="http://simpleicon.com/wp-content/uploads/responsive-design.png">
+                                <h6>Responsive Web Design</h6>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
             <div class='showcase'>
                 <h2>Showcase</h2>
@@ -75,12 +126,33 @@
                         <div class="left">
                             <a href="http://jhath16.github.io/Backbone_Menu" target='_blank'><div class="project-preview backbone-preview"></div></a>
                             <div class="project-links">
-                                <a href="http://jhath16.github.io/Backbone_Menu target='_blank'"><div class="button">Live Site</div></a> 
+                                <a href="http://jhath16.github.io/Backbone_Menu" target='_blank'><div class="button">Live Site</div></a> 
                                 <a href="https://github.com/jhath16/Backbone_Menu" target='_blank'><div class="button">Source Code</div></a> 
                             </div>
                         </div>
                         <div class="right">
-                            <p>This is a front end menu app that allows the user to choose an assortment of items from the menu, sort through the menu, altar the order, and send the finalized order to a backend server using Backfire(Backbone/Firebase)</p>
+                            <p>This is a front end menu application. It allows the user to sort through, add and remove items to and from their own live updating order, complete with a list of items on the order and a running price for all of the items. Once the order is submitted, the items are all sent in a single order to a backend server using Firebase.</p>
+                            <h5>Skills Used</h5>
+                            <ul>
+                                <li>HTML & CSS</li>
+                                <li>Backbone</li>
+                                <li>Underscore</li>
+                                <li>JavaScript/jQuery</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Surf And Paddle Recreation</h3>
+                    <div class="project">
+                        <div class="left">
+                            <a href="http://jhath16.github.io/Assignment_4/" target='_blank'><div class="project-preview surf-preview"></div></a>
+                            <div class="project-links">
+                                <a href="http://jhath16.github.io/Assignment_4/" target='_blank'><div class="button">Live Site</div></a> 
+                                <a href="https://github.com/jhath16/Assignment_4" target='_blank'><div class="button">Source Code</div></a> 
+                            </div>
+                        </div>
+                        <div class="right">
+                            <p>This is a front end menu application. It allows the user to sort through, add and remove items to and from their own live updating order, complete with a list of items on the order and a running price for all of the items. Once the order is submitted, the items are all sent in a single order to a backend server using Firebase.</p>
                             <h5>Skills Used</h5>
                             <ul>
                                 <li>HTML & CSS</li>

@@ -31,7 +31,7 @@ body {
   color: #333;
   font-size: 28px;
   box-sizing: border-box;
-  font-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -67,7 +67,13 @@ header {
   background: linear-gradient(#2a2a2a, #0F0D0F 90%);
   padding: .6em 2em .4em 2em;
 }
-header a {
+header ul {
+  float: right;
+}
+header li {
+  margin-left: .5em;
+  display: inline;
+  cursor: pointer;
   color: #D87A43;
   text-shadow: none;
   text-decoration: none;
@@ -78,26 +84,13 @@ header a {
   box-shadow: none;
   transition: text-shadow .25s ease,background .25s ease,box-shadow .05s ease;
 }
-header a:hover {
+header li:hover {
   background: rgba(255, 255, 255, 0.1);
   text-shadow: 0 0 8px #dc8756;
 }
-header a:active {
+header li:active {
   /*background:rgba(255,255,255,.055);*/
   box-shadow: inset 0 -1px 5px #0F0D0F;
-}
-header ul {
-  float: right;
-}
-header ul:after {
-  content: '';
-  display: table;
-  visibility: hidden;
-  clear: both;
-}
-header li {
-  margin-left: .5em;
-  display: inline;
 }
 
 @-webkit-keyframes fade-in {
@@ -232,18 +225,57 @@ h2 {
   text-align: center;
 }
 
+.skills {
+  background: #333;
+  color: white;
+  padding-bottom: 40px;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+}
+
+td {
+  background: #333;
+  width: 33%;
+  padding: 20px 0;
+  color: #333;
+  transition: all .4s ease;
+}
+td img {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top: 20px;
+  transition: all .4s ease;
+}
+td:hover {
+  background: grey;
+  color: #ccc;
+}
+td:hover img {
+  width: 80px;
+  height: 80px;
+  top: 0;
+}
+
 /* ====================================================== */
 /*                  Project Templates                     */
 /* ====================================================== */
+.showcase {
+  padding-bottom: 2em;
+  background: white;
+}
+
 h3 {
-  margin-bottom: 10px;
+  margin: 30px 0 10px 0;
   font-size: 1.3em;
 }
 
 .project {
   height: 250px;
   border-radius: 2px;
-  margin-bottom: 50px;
 }
 
 .left {
@@ -260,6 +292,10 @@ h3 {
   background: url("../images/backbone-menu.png") no-repeat;
 }
 
+.surf-preview {
+  background: url("../images/surf-and-paddle-preview.png") no-repeat;
+}
+
 .project-preview {
   height: 75%;
   background-size: 100% 100%;
@@ -268,9 +304,9 @@ h3 {
   transition: all .4s ease;
 }
 .project-preview:hover {
-  -webkit-transform: translateY(-3px);
-  transform: translateY(-3px);
-  box-shadow: 0 2px 8px #555;
+  -webkit-transform: translateY(-7px);
+  transform: translateY(-7px);
+  box-shadow: 0 2px 8px #333;
 }
 
 .project-links {
@@ -302,7 +338,7 @@ h3 {
   height: 100%;
 }
 .right p {
-  font-size: .7em;
+  font-size: .65em;
   margin: 0;
 }
 .right ul {
@@ -310,11 +346,12 @@ h3 {
 }
 .right ul li {
   margin-left: 20px;
-  font-size: .7em;
+  font-size: .65em;
 }
 
 h5 {
-  margin-top: .5em;
+  margin-top: .1em;
+  font-size: .7em;
 }
 
 /* ====================================================== */
@@ -410,7 +447,27 @@ h5 {
     font-size: 2.2em;
   }
 
+  .middle-align {
+    width: 80%;
+    text-align: center;
+  }
+
   .about p {
     padding: 0 1em;
+  }
+
+  .project {
+    text-align: center;
+    width: 90%;
+  }
+
+  .left {
+    display: block;
+    width: 90%;
+  }
+
+  .right {
+    text-align: center;
+    width: 90%;
   }
 }
