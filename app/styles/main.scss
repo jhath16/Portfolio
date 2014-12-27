@@ -8,7 +8,7 @@ $twitterBlue: #2FC2EF;
 $linkedinBlue: #0A7AB6;
 $mailColor: #F7CD5F;
 $buttonColor: #1681E8;
-$buttonHoverColor: #465fa0;
+$buttonHoverColor: #1660A5;
 
 @font-face {
     font-family: 'Mono Social Icons Font';
@@ -43,9 +43,9 @@ a.symbol:before {
 }
 
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Muli, Helvetica, Arial, sans-serif;
     color: #333;
-    font-size:28px;
+    font-size:27px;
     box-sizing:border-box;
     text-rendering:optimizeLegibility;
 }
@@ -271,7 +271,6 @@ h1 {
   color:white;
   font-weight:100;
   text-align:center;
-  font-family:sans-serif;
   padding-top:100px;
   opacity:1;
 }
@@ -407,7 +406,7 @@ h3 {
     background-size:100% 100%;
     background-position:0 0 center;
     border:1px solid black;
-    transition:all .4s ease;
+    transition:transform .4s ease, box-shadow .4s ease;
 
     &:hover {
         transform:translateY(-7px);
@@ -493,7 +492,7 @@ h5 {
         border-radius:50%;
         display:inline-block;
         text-align:center;
-        margin:0 .5em;
+        margin:0 .7em;
         background:#ddd;
     }
 
@@ -534,12 +533,12 @@ h5 {
 /*   Media Queries   */
 
 @media (max-width:1000px) {
-    body {
-        font-size:22px;
-    }
-
     .header {
         height:300px;
+    }
+
+    .showcase {
+        font-size:1.1em;
     }
 
     header {
@@ -558,37 +557,126 @@ h5 {
     }
 }
 
-@media (max-width:600px) {
-    header {
-        display:none;
+@media (max-width:950px) {
+    body {
+        font-size:23px;
     }
 
-    h1 {
-        padding-top:1.2em;
-        font-size:2.2em;
+    h2 {
+        margin-bottom:10px;
     }
 
-    .middle-align {
-        width:80%;
-        text-align:center;
-    }
-
-    .about p{
-        padding:0 1em;
+    h3 {
+        font-size:1em;
     }
 
     .project {
-        text-align:center;
-        width:90%;
+
+        .right {
+            font-size:.8em;
+        }
     }
 
-    .left{
+    .about p {
+        padding:0 20px;
+    }
+
+    .showcase .middle-align {
+        padding:0 40px;
+        font-size:1.2em;
+    }
+
+    .showcase .button {
+        font-size:.6em;
+        margin:.6em 8px 0 8px;
+    }
+}
+
+@media (max-width:800px) {
+    .showcase .left {
         display:block;
-        width:90%;
+        margin-bottom:15px;
     }
 
-    .right {
+    h3 {
         text-align:center;
-        width:90%;
+        line-height:1em;
+    }
+
+    h5 {
+        font-size:1em;
+        border-top:15px;
+    }
+
+    .project {
+        height:auto;
+
+        p {
+        border:1px solid black;
+        padding:20px;
+        background:#d1d8eb;
+        border-radius: 2px;
+        box-shadow: 0 1px 3px #ddd;
+    }
+    }
+
+    .project-preview {
+        width:320px;
+        height:175px;
+        margin:0 auto;
+    }
+
+    .showcase .left,
+    .showcase .right {
+        text-align:center;
+        float:none;
+        width:100%;
+
+        ul {
+            width:48%;
+            margin:0 auto;
+            li {
+              margin:0;
+
+            }
+        }
+    }
+}
+
+@media (max-width:700px) {
+    header {
+        font-size:1em;
+    }
+
+    .contact ul li {
+        margin:0 .3em;
+    }
+}
+
+@media (max-width:575px) {
+    header li {
+        display:block;
+        padding:0;
+    }
+
+    .skills img {
+        height:65px;
+        width:65px;
+        position: static;
+    }
+
+    .skills td {
+        color:#ccc;
+    }
+
+    td:hover img {
+        height:65px;
+        width:65px;
+    }
+}
+
+@media (max-width:450px) {
+    .contact ul li {
+        margin:0 .1em;
     }
 }
